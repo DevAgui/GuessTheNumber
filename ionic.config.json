@@ -1,0 +1,7 @@
+{
+  "name": "GuessTheNumber",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

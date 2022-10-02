@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col></ion-col>
+          <ion-col size="4" class="ion-align-self-center ion-align-items-center">
+            <img src="../../assets/guessthenumber.png" alt="Image for the title section with a text which it says 'guess the number'" id="title-image">
+            </ion-col>
+            <ion-col></ion-col>
+          </ion-row>
+        </ion-grid>
+      
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="4" class="ion-align-self-center">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>You have <b>{{opportunities}}</b> opportunities left</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item *ngModel>
+              <ion-label position="floating">Have a guess</ion-label>
+              <ion-input required [(ngModel)]="answer"></ion-input>
+            </ion-item>
+            <ion-button>Check your number</ion-button>
+
+            <ion-text *ngIf="">{{answer}}</ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
