@@ -24,13 +24,16 @@
             <ion-card-title>You have <b>{{opportunities}}</b> opportunities left</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-item *ngModel>
+            <ion-item>
               <ion-label position="floating">Have a guess</ion-label>
               <ion-input required [(ngModel)]="answer"></ion-input>
+              <ion-button expand="block" (click)="compareNumbers(answer)">Compare your number</ion-button>
             </ion-item>
-            <ion-button>Check your number</ion-button>
+            <ion-button expand="block" (click)="generateRandomNumber()">Generate your number</ion-button>
+            
 
-            <ion-text *ngIf="">{{answer}}</ion-text>
+            <ion-text *ngIf="answer">Your answer is correct!</ion-text>
+            <ion-text *ngIf="!answer"></ion-text>
           </ion-card-content>
         </ion-card>
       </ion-col>

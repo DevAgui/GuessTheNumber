@@ -7,18 +7,28 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
   opportunities = 3;
-  answer;
+  answer = false;
+  randomNumber;
 
   generateRandomNumber = () => {
 
-    return Math.floor(Math.random() * (1000 - 1 + 1)) 
+    this.randomNumber = Math.floor(Math.random() * (1000 - 1 + 1)) ;
+    console.log(this.randomNumber);
+
   }
 
-  compareNumbers = () => {
+  compareNumbers = (answer) => {
 
-    if(this.answer == this.generateRandomNumber){
-      return 
+    if(answer == this.randomNumber){
+
+      return this.answer = true;
+
+    } else{
+      this.opportunities--;
+      
+      return this.answer= false;
     }
+    
   }
 
   constructor() {}
