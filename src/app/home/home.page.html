@@ -21,21 +21,21 @@
       <ion-col size="4" class="ion-align-self-center">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>You have <b>{{opportunities}}</b> opportunities left</ion-card-title>
+            <ion-card-title>Have a guess</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <ion-item>
-              <ion-label position="floating">Have a guess</ion-label>
-              <ion-input required [(ngModel)]="answer"></ion-input>
-              <ion-button expand="block" (click)="compareNumbers(answer)">Compare your number</ion-button>
+              <ion-input type="number" required [(ngModel)]="userAnswer"></ion-input>
             </ion-item>
+            <ion-button expand="block" (click)="compareNumbers(userAnswer)">Compare your number</ion-button>
             <ion-button expand="block" (click)="generateRandomNumber()">Generate your number</ion-button>
-            
-
-            <ion-text *ngIf="answer">Your answer is correct!</ion-text>
-            <ion-text *ngIf="!answer"></ion-text>
           </ion-card-content>
         </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+          <ion-text >{{answerString}}</ion-text>
       </ion-col>
     </ion-row>
   </ion-grid>

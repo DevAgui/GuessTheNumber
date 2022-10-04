@@ -6,27 +6,35 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  opportunities = 3;
-  answer = false;
+  userAnswer:number;
+  answerString:string;
   randomNumber;
 
   generateRandomNumber = () => {
 
-    this.randomNumber = Math.floor(Math.random() * (1000 - 1 + 1)) ;
+    this.randomNumber = Math.floor(Math.random() * (100 - 1 + 1)) ;
     console.log(this.randomNumber);
+
+    return this.answerString="Your number has been generated between 1 and 100."
 
   }
 
-  compareNumbers = (answer) => {
+  compareNumbers = (userAnswer) => {
 
-    if(answer == this.randomNumber){
+    if(userAnswer == this.randomNumber){
 
-      return this.answer = true;
+      return this.answerString="Congratulations!! You have guess the number!";
 
-    } else{
-      this.opportunities--;
-      
-      return this.answer= false;
+    }
+
+    if(userAnswer < this.randomNumber){
+      return this.answerString="Your number is less than the number I thought.";
+
+    }
+
+    if(userAnswer > this.randomNumber){
+      return this.answerString="Your number is greater than the number I thought.";
+
     }
     
   }
