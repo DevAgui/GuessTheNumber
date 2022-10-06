@@ -8,10 +8,10 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
     @HostListener('mouseenter') guessedCorrectly() {
 
-        this.appwizard(this.appWizard || 'yellow');
+        this.appwizard();
       }
 
-      private appwizard(url: string) {
+      private appwizard() {
         this.el.nativeElement.style.styleUrls = '';
       }
       @Input() appWizard = '../../assets/guessthenumber.png';
